@@ -1,0 +1,1 @@
+<?php get_header(); ?><main id="main" class="container page-main"><?php while (have_posts()) : the_post(); ?><article <?php post_class(); ?>><header class="page-heading"><p class="eyebrow">YOUR DIGICARTS</p><h1><?php the_title(); ?></h1></header><div class="page-content"><?php the_content(); wp_link_pages(); ?></div></article><?php endwhile; ?></main><?php get_footer(); ?>

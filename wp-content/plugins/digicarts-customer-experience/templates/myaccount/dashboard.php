@@ -1,0 +1,22 @@
+<?php
+defined('ABSPATH') || exit;
+$customer=wp_get_current_user();
+$name=$customer->first_name ?: $customer->display_name;
+$recent=wc_get_orders(['customer_id'=>$customer->ID,'limit'=>4,'paginate'=>true,'orderby'=>'date','order'=>'DESC']);
+$downloads=wc_get_customer_available_downloads($customer->ID);
+?>
+<section class="dce-welcome"><div><p class="dce-eyebrow">MAKE SOMETHING GOOD</p><h2>Welcome back, <?php echo esc_html($name); ?>.</h2><p>Your next project starts here. Find your files, follow your orders and make yourself at home.</p></div><span class="dce-welcome-icon" aria-hidden="true"><?php echo dce_icon('dashboard'); ?></span></section>
+<div class="dce-overview-cards">
+    <a class="dce-overview-card" href="<?php echo esc_url(wc_get_account_endpoint_url('downloads')); ?>"><span class="dce-card-icon"><?php echo dce_icon('downloads'); ?></span><div><strong><?php echo esc_html(number_format_i18n(count($downloads))); ?></strong><span>Available downloads</span></div><?php echo dce_icon('arrow'); ?></a>
+    <a class="dce-overview-card" href="<?php echo esc_url(wc_get_account_endpoint_url('orders')); ?>"><span class="dce-card-icon"><?php echo dce_icon('orders'); ?></span><div><strong><?php echo esc_html(number_format_i18n($recent->total)); ?></strong><span>Your orders</span></div><?php echo dce_icon('arrow'); ?></a>
+</div>
+<section class="dce-dashboard-section"><div class="dce-panel-title"><div><h2>Your downloads</h2><p>Files that are ready for your next project.</p></div><a href="<?php echo esc_url(wc_get_account_endpoint_url('downloads')); ?>">View all <?php echo dce_icon('arrow'); ?></a></div>
+<?php if ($downloads) : ?><div class="dce-download-list"><?php foreach (array_slice($downloads,0,3) as $download) : $product=wc_get_product($download['product_id']); ?><div class="dce-download-row"><span class="dce-file-thumbnail"><?php echo $product ? wp_kses_post($product->get_image('woocommerce_thumbnail',['alt'=>'','loading'=>'lazy'])) : dce_icon('downloads'); ?></span><div><strong><?php echo esc_html($download['product_name']); ?></strong><small><?php echo esc_html($download['download_name']); ?></small></div><a class="dce-download-button" href="<?php echo esc_url($download['download_url']); ?>" aria-label="<?php echo esc_attr('Download '.$download['download_name']); ?>"><?php echo dce_icon('downloads'); ?><span>Download</span></a></div><?php endforeach; ?></div>
+<?php else : ?><div class="dce-empty"><span class="dce-empty-icon"><?php echo dce_icon('downloads'); ?></span><h3>Your creative library starts here</h3><p>Eligible files from your purchases will appear here, ready to download.</p><a class="dce-outline-button" href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>">Find your first digital product <?php echo dce_icon('arrow'); ?></a></div><?php endif; ?>
+</section>
+<section class="dce-dashboard-section"><div class="dce-panel-title"><div><h2>Recent orders</h2><p>A quick look at your latest purchases.</p></div><a href="<?php echo esc_url(wc_get_account_endpoint_url('orders')); ?>">View all <?php echo dce_icon('arrow'); ?></a></div>
+<?php if ($recent->orders) : ?><div class="dce-order-list"><?php foreach ($recent->orders as $order) : $date=$order->get_date_created(); ?><a class="dce-order-row" href="<?php echo esc_url($order->get_view_order_url()); ?>"><span class="dce-order-id"><strong>Order #<?php echo esc_html($order->get_order_number()); ?></strong><?php if ($date) : ?><small><?php echo esc_html(wc_format_datetime($date)); ?></small><?php endif; ?></span><span class="dce-order-status dce-status-<?php echo esc_attr(sanitize_html_class($order->get_status())); ?>"><?php echo esc_html(wc_get_order_status_name($order->get_status())); ?></span><strong class="dce-order-total"><?php echo wp_kses_post($order->get_formatted_order_total()); ?></strong><?php echo dce_icon('arrow'); ?></a><?php endforeach; ?></div>
+<?php else : ?><div class="dce-empty dce-empty-compact"><?php echo dce_icon('orders'); ?><p>No orders yet. Your purchases will appear here.</p></div><?php endif; ?>
+</section>
+<a class="dce-account-shortcut" href="<?php echo esc_url(wc_get_account_endpoint_url('edit-account')); ?>"><?php echo dce_icon('lock'); ?><span><strong>Keep your account up to date</strong><small>Manage your profile, email and password.</small></span><?php echo dce_icon('arrow'); ?></a>
+<?php do_action('woocommerce_account_dashboard'); do_action('woocommerce_before_my_account'); do_action('woocommerce_after_my_account'); ?>

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "layout": { "contentSize": "780px", "wideSize": "1240px" },
+    "color": {
+      "palette": [
+        { "slug": "navy", "name": "Navy", "color": "#101727" },
+        { "slug": "violet", "name": "Logo violet", "color": "#7546e8" },
+        { "slug": "mint", "name": "Soft lavender", "color": "#eee8fa" },
+        { "slug": "paper", "name": "Paper", "color": "#fafafa" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.dchf-admin{--editor-accent:#7546e8;--editor-border:#e2e4eb;max-width:1200px;margin:28px 28px 50px 0;color:#252936}
+.dchf-admin [hidden]{display:none!important}
+.dchf-admin-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:28px}
+.dchf-editor-eyebrow{font-size:11px;font-weight:650;letter-spacing:1.3px;color:#756c88}
+.dchf-admin-heading h1{font-size:28px;font-weight:650;line-height:1.3;margin:7px 0;padding:0}
+.dchf-admin-heading p{margin:0;color:#666c79;font-size:14px}
+.dchf-admin .dchf-preview-link{display:inline-flex;align-items:center;gap:16px;padding:5px 15px;border-color:var(--editor-border);border-radius:6px;background:#fff;color:#353341;white-space:nowrap}
+.dchf-editor-layout{display:grid;grid-template-columns:215px minmax(0,1fr);gap:24px;align-items:start}
+.dchf-admin-nav{display:flex;flex-direction:column;gap:5px;position:sticky;top:52px;padding:8px;background:#fff;border:1px solid var(--editor-border);border-radius:8px}
+.dchf-admin-nav a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 12px;color:#555966;text-decoration:none;font-size:13px;font-weight:500;border-radius:6px;transition:background .15s,color .15s}
+.dchf-admin-nav a>span{color:#9b95a9;font-size:20px;line-height:1}
+.dchf-admin-nav a:hover{background:#f6f4fa;color:#51368a}
+.dchf-admin-nav a[aria-selected=true]{background:#f0eafa;color:#6534cc;font-weight:600}
+.dchf-admin-nav a[aria-selected=true]>span{color:var(--editor-accent)}
+.dchf-admin a:focus-visible,.dchf-admin button:focus-visible,.dchf-admin input:focus-visible,.dchf-admin textarea:focus-visible,.dchf-admin-card:focus-visible{outline:2px solid var(--editor-accent);outline-offset:3px;box-shadow:none}
+.dchf-editor-panels{min-width:0}
+.dchf-admin-card{background:#fff;border:1px solid var(--editor-border);border-radius:8px;padding:28px 30px;margin:0 0 20px;scroll-margin-top:52px}
+.dchf-admin-card:last-child{margin-bottom:0}
+.dchf-panel-heading{border-bottom:1px solid #ececf2;padding-bottom:21px;margin-bottom:26px}
+.dchf-panel-heading h2{font-size:20px;line-height:1.4;margin:0 0 6px;color:#252936}
+.dchf-panel-heading p{color:#6b6f7c;font-size:13px;margin:0;line-height:1.6}
+.dchf-field{display:grid;grid-template-columns:180px minmax(0,1fr);gap:22px;margin:24px 0;align-items:start}
+.dchf-field:last-child{margin-bottom:0}
+.dchf-field>label{font-size:13px;font-weight:600;padding-top:10px;line-height:1.5}
+.dchf-field-control{min-width:0}
+.dchf-field input:not([type=checkbox]):not([type=color]):not([type=hidden]),.dchf-field textarea{box-sizing:border-box;width:100%;max-width:540px;border:1px solid #cfd2dd;border-radius:6px;min-height:40px;padding:8px 11px;font-size:14px;line-height:1.5;background:#fff;color:#292d39}
+.dchf-field textarea{resize:vertical;min-height:94px}
+.dchf-field input[type=number]{max-width:150px!important}
+.dchf-field input[type=color]{width:62px;height:40px;padding:4px;background:#fff;border:1px solid #cfd2dd;border-radius:6px;vertical-align:middle;cursor:pointer}
+.dchf-color-value{margin-left:12px;font-size:13px;color:#666c79;font-family:monospace;vertical-align:middle}
+.dchf-field input[type=checkbox]{margin:11px 8px 0 0;border-color:#b8bdcb;border-radius:4px}
+.dchf-field input[type=checkbox]:checked:before{filter:hue-rotate(35deg)}
+.dchf-toggle-label{display:inline-block;padding-top:9px;font-size:13px;color:#646977;vertical-align:top}
+.dchf-field .description{max-width:540px;margin:8px 0 0;font-size:12px;line-height:1.65;color:#747987}
+.dchf-image-preview{display:flex;align-items:center;justify-content:center;min-height:100px;max-width:360px;padding:16px;border:1px dashed #cfd2dd;background:#fafafd;border-radius:6px;box-sizing:border-box}
+.dchf-image-preview img{display:block;max-width:100%;max-height:86px;width:auto;height:auto}
+.dchf-image-preview span{font-size:12px;color:#7b7f8b}
+.dchf-image-actions{display:flex;align-items:center;gap:18px;margin-top:12px}
+.dchf-image-actions .button{border-radius:6px;background:#fff;color:#554872;border-color:#cbc6d6;padding:2px 13px}
+.dchf-editor-note{padding:13px 16px;background:#f7f6fa;border-left:3px solid #ded3f4;border-radius:0 6px 6px 0;color:#676273;font-size:12px;line-height:1.8;margin:20px 0}
+.dchf-editor-note a{color:#6534cc}
+.dchf-link-cards{display:grid;gap:10px}
+.dchf-link-card{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 18px;border:1px solid var(--editor-border);border-radius:6px;text-decoration:none;color:#343342;transition:border-color .15s,background .15s}
+.dchf-link-card:hover{border-color:#c9b6ee;background:#fcfaff;color:#6534cc}
+.dchf-link-card strong{display:block;font-size:13px;font-weight:600}
+.dchf-link-card small{display:block;margin-top:5px;font-size:12px;line-height:1.6;color:#747987}
+.dchf-link-card>span:last-child{font-size:19px;color:#8c7caa}
+.dchf-editor-payment-preview{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 0}
+.dchf-editor-payment-preview img{object-fit:contain;padding:5px 8px;border:1px solid var(--editor-border);border-radius:6px;background:#fff}
+.dchf-save-bar{position:sticky;bottom:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 22px;margin-top:22px;background:#fff;border:1px solid var(--editor-border);border-radius:8px;box-shadow:0 -4px 18px #25293606}
+.dchf-save-bar p{font-size:12px;color:#747987;margin:0;line-height:1.6}
+.dchf-save-bar.is-dirty p{color:#865b1e}
+.dchf-save-bar .button-primary{flex-shrink:0;background:var(--editor-accent);border-color:var(--editor-accent);border-radius:6px;padding:5px 22px;min-height:40px;font-weight:600}
+.dchf-save-bar .button-primary:hover,.dchf-save-bar .button-primary:focus{background:#6636d2;border-color:#6636d2}
+@media(max-width:1100px){.dchf-editor-layout{grid-template-columns:185px minmax(0,1fr);gap:16px}.dchf-admin-card{padding:24px}.dchf-field{grid-template-columns:145px minmax(0,1fr);gap:16px}}
+@media(max-width:782px){.dchf-admin{margin:20px 12px 35px 0}.dchf-admin-heading{align-items:flex-start;gap:16px}.dchf-admin-heading h1{font-size:24px}.dchf-admin-heading p{font-size:13px}.dchf-editor-layout{grid-template-columns:1fr;gap:16px}.dchf-admin-nav{position:static;flex-direction:row;overflow-x:auto;gap:4px}.dchf-admin-nav a{flex-shrink:0;white-space:nowrap;padding:10px 13px}.dchf-admin-nav a>span{display:none}.dchf-admin-card{padding:22px 20px}.dchf-field{grid-template-columns:1fr;gap:8px}.dchf-field>label{padding-top:0}.dchf-field input:not([type=checkbox]):not([type=color]):not([type=hidden]),.dchf-field textarea{font-size:16px;max-width:none}.dchf-save-bar{padding:13px 16px;gap:15px}.dchf-save-bar .button-primary{padding:4px 16px}}
+@media(max-width:480px){.dchf-admin-heading{flex-direction:column}.dchf-save-bar p{max-width:170px}.dchf-save-bar .button-primary{padding-inline:12px}}
+@media(prefers-reduced-motion:reduce){.dchf-admin *{transition:none!important}}
+
+/* Match the original storefront logo in the editor preview. */
+@font-face{font-family:DCHFPreviewPoppins;src:url('fonts/Poppins-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+.dchf-image-preview .dchf-logo{display:inline-flex;align-items:center;gap:10px;font:700 26px/1.2 DCHFPreviewPoppins,Poppins,Arial,sans-serif;letter-spacing:-1px;color:#24272e}
+.dchf-image-preview .dchf-logo-mark{display:grid;width:28px;height:28px;flex-shrink:0;grid-template-columns:1fr 1fr;gap:3px;transform:rotate(-8deg)}
+.dchf-image-preview .dchf-logo-mark i{background:#7546e8;border-radius:2px}
+.dchf-image-preview .dchf-logo-mark i:nth-child(2){border-radius:50% 50% 2px 2px}
+.dchf-image-preview .dchf-logo-mark i:nth-child(3){border-radius:2px 2px 2px 9px;background:#a286eb}
+.dchf-image-preview .dchf-logo>span:last-child{font:inherit;color:inherit}
+
+.dchf-field-menu select{box-sizing:border-box;width:100%;max-width:540px;min-height:40px;padding:7px 32px 7px 11px;border:1px solid #cfd2dd;border-radius:6px;font-size:14px;color:#292d39}
+.dchf-menu-actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:9px;font-size:12px}
+.dchf-menu-actions a{color:#6534cc;text-decoration:none}
+.dchf-menu-actions a:hover{text-decoration:underline}
+@media(max-width:782px){.dchf-field-menu select{font-size:16px;max-width:none}}
+
+.dchf-menu-heading-field{border-top:1px solid #ececf2;padding-top:24px;margin-top:30px}
+.dchf-menu-heading-field+.dchf-field-menu{margin-top:12px}
+
+.dchf-image-preview .dchf-editor-payment-preview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;width:100%;margin:0}
+.dchf-image-preview .dchf-editor-payment-preview img{box-sizing:border-box;width:100%;height:40px;min-width:0;padding:4px;object-fit:contain}
